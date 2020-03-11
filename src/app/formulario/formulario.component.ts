@@ -13,9 +13,9 @@ export class FormularioComponent {
   // nombreInput: string;
   // apellidoInput: string;
 
-  constructor(
-    private personasService: PersonasService
-  ) { }   // para usar un service, tenemos que inyectarlo en el constructor (usando forma corta)
+  constructor(private personasService: PersonasService) { // para usar un service, tenemos que inyectarlo en el constructor (usando forma corta)
+    this.personasService.saludar.subscribe((indice: number) => alert(`El índice es: ${indice}`)) // nos sirve para recibir la información de otro componente y poder manejarla
+  }
 
   onAgregarPersona() {
     const persona = new Persona(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value);

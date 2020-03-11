@@ -1,10 +1,10 @@
 import { Persona } from './Persona.model';
 import { LoggingService } from './LoggingService.service';
-import { Injectable } from '@angular/core';
-
+import { Injectable, EventEmitter } from '@angular/core';
 @Injectable()   // para injectar un componente en otro, tenemos que usar este decorador desde angular/core
 export class PersonasService {
   personas: Persona[] = [new Persona('John', 'Doe'), new Persona('John', 'Cage')];
+  saludar = new EventEmitter<number>();
 
   constructor(private loggingService: LoggingService) {}
 
