@@ -8,13 +8,13 @@ import { Persona } from '../Persona.model';
 })
 export class FormularioComponent {
   @Output() personaCreada = new EventEmitter<Persona>();    // para emitir un evento de un hijo a un padre
-  nombreInput: string;
-  apellidoInput: string;
+  // nombreInput: string;
+  // apellidoInput: string;
 
   constructor() { }
 
-  onAgregarPersona() {
-    const persona = new Persona(this.nombreInput, this.apellidoInput);
+  onAgregarPersona(nombreInput: HTMLInputElement, apellidoInput: HTMLInputElement) {
+    const persona = new Persona(nombreInput.value, apellidoInput.value);
     this.personaCreada.emit(persona);
   }
 }
