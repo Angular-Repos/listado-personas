@@ -5,8 +5,7 @@ import { LoggingService } from '../LoggingService.service';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css'],
-  providers: [LoggingService]   // para poder inyectarlo, tenemos que configurarlo en los providers
+  styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
   @Output() personaCreada = new EventEmitter<Persona>();    // para emitir un evento de un hijo a un padre

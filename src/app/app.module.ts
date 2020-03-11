@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PersonaComponent } from './persona/persona.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { LoggingService } from './LoggingService.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { FormularioComponent } from './formulario/formulario.component';
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  providers: [LoggingService],    // usar globalmente un service para los componentes, lo configuramos directamente en los providers de app.module
   bootstrap: [AppComponent]
 })
 export class AppModule { }
